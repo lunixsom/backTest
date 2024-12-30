@@ -9,7 +9,7 @@ const Inventario = require('../models/inventarioModel');
 const { body, validationResult } = require('express-validator');
 
 // librería para encriptar contraseñas
-const bcrypt = require('bcrypt');
+/* const bcrypt = require('bcrypt'); */
 
 //importamos el esquema del usuario
 const User = require('../models/userModel');

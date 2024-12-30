@@ -5,7 +5,7 @@ const router = express.Router();
 const { body, validationResult } = require('express-validator');
 
 // librería para encriptar contraseñas
-const bcrypt = require('bcrypt');
+/* const bcrypt = require('bcrypt'); */
 
 //importamos el esquema del usuario
 const User = require('../models/userModel');
@@ -113,11 +113,11 @@ router.post("/register",
             console.log(usuarioExiste);
 
             
-            const salt = bcrypt.genSaltSync(10);
-            console.log(salt);
+/*             const salt = bcrypt.genSaltSync(10);
+            console.log(salt); */
 
-            persona.password = await bcrypt.hashSync(password, salt);
-            console.log(persona.password);
+/*             persona.password = await bcrypt.hashSync(password, salt);
+            console.log(persona.password); */
 
             const newUser = new User(persona);
 
@@ -170,10 +170,10 @@ router.post("/register",
                 }
     
                 // Si se pasa un nuevo password, lo encriptamos
-                if (password) {
+/*                 if (password) {
                     const salt = bcrypt.genSaltSync(10);
                     usuario.password = await bcrypt.hashSync(password, salt);
-                }
+                } */
     
                 // Actualizar los campos del usuario
                 usuario.nombre = nombre || usuario.nombre;
